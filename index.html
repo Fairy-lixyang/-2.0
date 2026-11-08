@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>草肤荟 Caofuhui — 植物草本护肤品牌官网</title>
+<meta name="description" content="草肤荟植物草本护肤品牌官网：三款产品的完整成分表、成分对照、本草图鉴与成分科普。课程命题作业，模拟品牌。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2322362A'/%3E%3Cpath d='M16 27c0-8 4-13 9-15-1 7-4 12-9 15z' fill='%23F5F3EA'/%3E%3Cpath d='M16 27c0-8-4-13-9-15 1 7 4 12 9 15z' fill='%239FB3A1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+<style>
+/* ========== 基础令牌 ========== */
+:root{
+  --ink:#1B271F;
+  --deep:#22362A;
+  --green:#41604A;
+  --sage:#9FB3A1;
+  --paper:#F5F3EA;
+  --paper-2:#FBFAF4;
+  --line:#D9D3C2;
+  --line-soft:#E7E2D3;
+  --gold:#9C7F45;
+  --muted:#6C7568;
+  --serif:"Noto Serif SC","Songti SC","Source Han Serif SC",Georgia,serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --latin:"Cormorant Garamond","Noto Serif SC",Georgia,serif;
+  --pad:clamp(20px,5vw,64px);
+  --nav-h:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;line-height:1.3;letter-spacing:.02em}
+p{margin:0}
+.wrap{width:min(1280px,calc(100% - var(--pad)*2));margin-inline:auto}
+.eyebrow{
+  font-size:12px;letter-spacing:.22em;color:var(--muted);
+  text-transform:none;margin:0 0 14px;font-weight:400;
+}
+.latin{font-family:var(--latin);font-style:italic;letter-spacing:.02em}
+
+/* ========== 导航 ========== */
+.site-nav{
+  position:sticky;top:0;z-index:40;background:rgba(245,243,234,.94);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:24px}
+.brand-lockup{display:flex;align-items:baseline;gap:12px;flex-shrink:0}
+.brand-lockup .mark{width:22px;height:22px;align-self:center}
+.brand-name{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.14em}
+.brand-sub{font-family:var(--latin);font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:14px}
+.nav-links a{padding:6px 0;border-bottom:1px solid transparent;color:#39443A;transition:border-color .2s,color .2s}
+.nav-links a:hover{color:var(--ink);border-bottom-color:var(--gold)}
+.nav-links a.active{color:var(--ink);border-bottom-color:var(--ink)}
+.nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center}
+.nav-toggle svg{width:22px;height:22px}
+
+/* ========== 首屏 ========== */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:clamp(560px,80vh,780px);
+  display:flex;align-items:center;color:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.hero-media{position:absolute;inset:0;z-index:-1}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:62% 45%}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(20,29,23,.97) 0%,rgba(20,29,23,.9) 34%,rgba(20,29,23,.55) 55%,rgba(20,29,23,.08) 78%,rgba(20,29,23,0) 100%);
+}
+.hero-inner{padding-block:clamp(56px,8vw,88px)}
+.hero .eyebrow{color:var(--sage);letter-spacing:.24em}
+.hero h1{
+  font-size:clamp(2.5rem,6.2vw,4.4rem);line-height:1.16;letter-spacing:.06em;
+  color:#F7F5EC;margin-bottom:26px;
+}
+.hero-lede{max-width:34ch;font-size:15px;line-height:2;color:#DCDCD0;font-weight:300}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:13px 26px;
+  font-size:14px;letter-spacing:.12em;border:1px solid transparent;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.btn-solid{background:var(--paper);color:var(--ink)}
+.btn-solid:hover{background:#E4DFC9}
+.btn-ghost{border-color:rgba(247,245,236,.45);color:#F7F5EC}
+.btn-ghost:hover{border-color:#F7F5EC;background:rgba(247,245,236,.12)}
+.btn-line{border-color:var(--line);color:var(--ink);padding:11px 20px}
+.btn-line:hover{border-color:var(--ink);background:var(--paper-2)}
+.specimen{
+  position:absolute;right:clamp(20px,4vw,56px);bottom:clamp(24px,5vw,56px);
+  width:300px;padding:18px 20px 16px;z-index:2;
+  border:1px solid rgba(247,245,236,.34);background:rgba(18,27,21,.66);
+  font-size:12px;line-height:1.9;letter-spacing:.06em;color:#E9E6D8;
+}
+.specimen .spec-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted rgba(247,245,236,.28);padding:3px 0}
+.specimen .spec-row:last-child{border-bottom:0}
+.specimen .k{opacity:.62;flex-shrink:0}
+.specimen .spec-row span:last-child{text-align:right;max-width:64%}
+.specimen .spec-title{font-family:var(--latin);font-size:15px;letter-spacing:.06em;margin-bottom:8px;color:#F7F5EC}
+
+/* ========== 通用区块 ========== */
+.section{padding-block:clamp(56px,9vw,112px);border-bottom:1px solid var(--line);scroll-margin-top:calc(var(--nav-h) + 16px)}
+.section.alt{background:var(--paper-2)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.sec-head h2{font-size:clamp(1.75rem,3.4vw,2.7rem);letter-spacing:.03em}
+.sec-lede{font-size:14.5px;line-height:2;color:var(--muted);max-width:38ch}
+.rule{height:1px;background:var(--line);margin:0}
+
+/* ========== 品牌理念 ========== */
+.about-grid{display:grid;grid-template-columns:minmax(0,3.2fr) minmax(0,8fr);gap:clamp(28px,5vw,72px)}
+.about-aside h2{font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.45}
+.about-aside .latin{display:block;margin-top:14px;color:var(--muted);font-size:14px}
+.principles{display:grid;gap:0}
+.principle{padding:26px 0 28px;border-top:1px solid var(--line)}
+.principle:first-child{border-top:0;padding-top:0}
+.principle h3{font-size:19px;margin-bottom:10px;letter-spacing:.06em}
+.principle p{font-size:14.5px;line-height:2;color:#3D473E;max-width:56ch}
+.principle .tagline{font-family:var(--latin);font-style:italic;font-size:13.5px;color:var(--gold);margin-top:10px;letter-spacing:.04em}
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:clamp(32px,5vw,56px)}
+.stat{padding:22px 18px 6px;border-right:1px solid var(--line-soft)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat .num{font-family:var(--latin);font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.1;color:var(--green);letter-spacing:.02em}
+.stat .cap{font-size:12.5px;color:var(--muted);letter-spacing:.08em;margin-top:6px}
+
+/* ========== 产品 ========== */
+.product-intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,56px);align-items:center;margin-bottom:clamp(40px,6vw,64px)}
+.product-intro .frame{border:1px solid var(--line);overflow:hidden;background:#E9E7DC}
+.product-intro .frame figcaption{font-size:11.5px;color:var(--muted);letter-spacing:.08em;padding:10px 12px;border-top:1px solid var(--line);background:var(--paper)}
+.product-intro .copy h2{font-size:clamp(1.6rem,2.9vw,2.2rem);margin-bottom:18px}
+.product-intro .copy p{font-size:14.5px;line-height:2;color:#3D473E;max-width:44ch}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.p-card{padding:clamp(22px,2.6vw,34px) 0 8px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.p-card:nth-child(3n){border-right:0}
+.p-card:not(:first-child){padding-left:clamp(20px,2.4vw,32px)}
+.p-card:not(:last-child){padding-right:clamp(20px,2.4vw,32px)}
+.p-cat{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;letter-spacing:.16em;color:var(--muted)}
+.p-cat .swatch{width:18px;height:18px;border:1px solid var(--line)}
+.p-vessel{margin:18px 0 8px;height:96px;display:flex;align-items:flex-end}
+.p-vessel svg{width:auto;height:96px}
+.p-name{font-size:24px;letter-spacing:.06em;margin-bottom:4px}
+.p-latin{font-family:var(--latin);font-style:italic;font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.p-position{font-size:13.5px;line-height:1.95;color:#40493F;margin-bottom:18px;min-height:5.6em}
+.p-meta{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line-soft)}
+.p-meta .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px dotted var(--line)}
+.p-meta .row span:first-child{letter-spacing:.06em}
+.p-meta .row span:last-child{color:var(--ink);text-align:right}
+.p-keys{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  border:1px solid var(--line);padding:5px 10px;font-size:12px;letter-spacing:.04em;
+  background:transparent;transition:background .18s,border-color .18s;text-align:left;
+}
+.chip:hover{background:var(--paper-2);border-color:var(--green)}
+.p-actions{margin-top:auto;padding-top:22px}
+.p-actions .btn{width:100%;justify-content:space-between;padding-inline:18px}
+
+/* ========== 成分对照 ========== */
+.formula-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+.formula-bar .tally{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.formula-bar .tally strong{color:var(--ink);font-weight:500}
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.06em;cursor:pointer;border-bottom:1px solid var(--line);padding-bottom:2px}
+.switch:hover{border-bottom-color:var(--ink)}
+.switch .box{width:13px;height:13px;border:1px solid var(--ink);display:inline-block;position:relative}
+.switch[aria-pressed="true"] .box::after{content:"";position:absolute;inset:2px;background:var(--green)}
+.table-wrap{overflow-x:auto}
+table.cmp{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13.5px}
+table.cmp col.c1{width:34%}table.cmp col.c2{width:22%}table.cmp col.c3{width:22%}table.cmp col.c4{width:22%}
+table.cmp thead th{
+  text-align:left;font-weight:500;font-size:12px;letter-spacing:.1em;color:var(--muted);
+  padding:12px 12px;border-bottom:1px solid var(--ink);vertical-align:bottom;
+}
+table.cmp thead th .th-name{display:block;font-family:var(--serif);font-size:15px;letter-spacing:.05em;color:var(--ink);margin-top:3px}
+table.cmp tbody tr{border-bottom:1px solid var(--line-soft)}
+table.cmp tbody tr.shared{background:#F1EFE1}
+table.cmp tbody td{padding:9px 12px;vertical-align:middle}
+table.cmp td.cell-mark{text-align:center;color:var(--green);font-size:15px}
+table.cmp td .iname{display:block}
+table.cmp td .ipos{display:block;font-size:11px;color:var(--muted);letter-spacing:.06em}
+table.cmp tbody td:first-child{border-left:3px solid transparent}
+table.cmp tbody tr.shared td:first-child{border-left-color:var(--gold)}
+.mobile-cmp{display:none}
+.formula-note{font-size:12px;color:var(--muted);line-height:1.9;margin-top:16px;max-width:80ch}
+
+/* ========== 本草图鉴 ========== */
+.herb-toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:30px}
+.search{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--ink);padding:6px 2px;min-width:260px;flex:1;max-width:360px}
+.search svg{width:16px;height:16px;flex-shrink:0;opacity:.6}
+.search input{border:0;background:transparent;font:inherit;font-size:14px;width:100%;outline:none;color:var(--ink)}
+.search input::placeholder{color:#9AA294;letter-spacing:.04em}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{border:1px solid var(--line);padding:6px 14px;font-size:12.5px;letter-spacing:.08em;transition:.18s}
+.filter:hover{border-color:var(--green)}
+.filter.on{background:var(--deep);border-color:var(--deep);color:var(--paper)}
+.herb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.herb-card{
+  padding:22px 20px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:transparent;text-align:left;display:flex;flex-direction:column;gap:6px;transition:background .18s;
+}
+.herb-card:hover{background:var(--paper-2)}
+.herb-card:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+.herb-card .h-type{font-size:11px;letter-spacing:.16em;color:var(--gold)}
+.herb-card .h-name{font-family:var(--serif);font-size:19px;letter-spacing:.05em}
+.herb-card .h-latin{font-family:var(--latin);font-style:italic;font-size:13px;color:var(--muted);line-height:1.5}
+.herb-card .h-desc{font-size:13px;line-height:1.9;color:#4A544A;margin-top:8px}
+.herb-empty{grid-column:1/-1;padding:48px 0;text-align:center;color:var(--muted);font-size:14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ========== 科普 ========== */
+.sci-grid{display:grid;grid-template-columns:minmax(0,4.6fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:start}
+.sci-figure{position:sticky;top:calc(var(--nav-h) + 24px);border:1px solid var(--line);background:var(--paper-2)}
+.sci-figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.sci-figure figcaption{padding:14px 16px;font-size:11.5px;color:var(--muted);letter-spacing:.06em;line-height:1.8;border-top:1px solid var(--line)}
+.acc{display:grid;border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-btn{display:flex;align-items:flex-start;gap:16px;width:100%;padding:22px 0;text-align:left}
+.acc-btn .idx{font-family:var(--latin);font-size:13px;color:var(--muted);padding-top:3px;min-width:22px}
+.acc-btn .t{font-family:var(--serif);font-size:17px;letter-spacing:.04em;flex:1}
+.acc-btn .plus{width:16px;height:16px;position:relative;flex-shrink:0;margin-top:6px;transition:transform .25s}
+.acc-btn .plus::before,.acc-btn .plus::after{content:"";position:absolute;background:var(--ink)}
+.acc-btn .plus::before{left:0;top:7px;width:16px;height:1px}
+.acc-btn .plus::after{top:0;left:7px;height:16px;width:1px;transition:opacity .25s}
+.acc-item.open .plus{transform:rotate(180deg)}
+.acc-item.open .plus::after{opacity:0}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.acc-panel .inner{padding:0 0 26px 38px;font-size:14px;line-height:2.05;color:#3D473E;max-width:62ch}
+.acc-panel .inner p+p{margin-top:12px}
+.acc-panel .inner .quote{border-left:2px solid var(--sage);padding-left:14px;margin:14px 0;font-size:13px;color:var(--muted)}
+
+/* ========== 合规 ========== */
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.comp-block{padding:28px 22px 8px;border-right:1px solid var(--line-soft)}
+.comp-block:first-child{padding-left:0}
+.comp-block:last-child{border-right:0}
+.comp-block h3{font-size:16px;letter-spacing:.08em;margin-bottom:12px}
+.comp-block p{font-size:13px;line-height:1.95;color:#454F45}
+
+/* ========== 作业材料 ========== */
+.submit-grid{display:grid;grid-template-columns:minmax(0,4.4fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:start}
+.stack-list{border-top:1px solid var(--line)}
+.stack-row{display:flex;gap:18px;padding:12px 0;border-bottom:1px solid var(--line-soft);font-size:13px;line-height:1.9}
+.stack-row .k{min-width:88px;color:var(--muted);letter-spacing:.06em;flex-shrink:0}
+.stack-row .v{color:#3D473E}
+.log-timeline{display:grid;grid-template-columns:74px minmax(0,1fr);column-gap:18px}
+.log-time{font-family:var(--latin);font-size:13px;letter-spacing:.06em;color:var(--muted);text-align:right;padding-top:2px;align-self:start}
+.log-body::before{content:"";position:absolute;left:-4.5px;top:5px;width:8px;height:8px;border:1px solid var(--green);border-radius:50%;background:var(--paper-2)}
+.log-body{position:relative;border-left:1px solid var(--line);padding:0 0 28px 26px}
+.log-timeline > .log-body:last-child{padding-bottom:0}
+.log-body h4{font-size:15.5px;letter-spacing:.06em;margin-bottom:6px}
+.log-body p{font-size:13px;line-height:1.95;color:#495348;max-width:58ch}
+.declare{margin-top:clamp(32px,4vw,48px);border-top:1px solid var(--line);padding-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,40px)}
+.declare .d-block h4{font-size:14px;letter-spacing:.08em;margin-bottom:8px}
+.declare .d-block p{font-size:12.5px;line-height:1.95;color:var(--muted)}
+.declare .d-block.wide{grid-column:1/-1}
+
+/* ========== 页脚 ========== */
+.site-footer{background:var(--deep);color:#DCDDD2;padding:clamp(44px,6vw,72px) 0 32px}
+.foot-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(247,245,236,.18)}
+.foot-brand .brand-name{color:#F7F5EC}
+.foot-brand p{font-size:13px;line-height:1.95;color:#B9BFB2;margin-top:14px;max-width:40ch}
+.foot-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:12.5px}
+.foot-links .col h5{font-family:var(--serif);font-size:13px;letter-spacing:.1em;font-weight:500;margin:0 0 10px;color:#F7F5EC}
+.foot-links .col a,.foot-links .col span{display:block;color:#B9BFB2;padding:3px 0;transition:color .18s}
+.foot-links .col a:hover{color:#F7F5EC}
+.foot-bottom{padding-top:22px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font-size:11.5px;color:#9AA294;line-height:1.9}
+.foot-bottom p{max-width:70ch}
+
+/* ========== 弹层 ========== */
+.overlay{
+  position:fixed;inset:0;z-index:60;background:rgba(20,28,22,.52);
+  opacity:0;pointer-events:none;transition:opacity .24s;
+}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;z-index:61;width:min(560px,100%);
+  background:var(--paper);border-left:1px solid var(--line);
+  transform:translateX(102%);transition:transform .3s cubic-bezier(.32,.72,0,1);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.drawer.on{transform:none}
+.drawer-head{padding:22px clamp(20px,4vw,34px) 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.drawer-head .eyebrow{margin-bottom:6px}
+.drawer-head h3{font-size:21px;letter-spacing:.05em}
+.drawer-close{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);flex-shrink:0}
+.drawer-close:hover{background:var(--paper-2);border-color:var(--ink)}
+.drawer-body{padding:clamp(20px,4vw,32px);overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
+.d-sec{margin-bottom:26px}
+.d-sec h4{font-size:12.5px;letter-spacing:.16em;color:var(--muted);margin-bottom:10px;font-weight:400}
+.d-sec .body{font-size:13.5px;line-height:1.95;color:#3D473E}
+.ing-list{display:flex;flex-wrap:wrap;gap:6px}
+.ing{border:1px solid var(--line-soft);padding:4px 9px;font-size:12px;line-height:1.6;background:var(--paper-2);transition:.16s}
+.ing:hover{border-color:var(--green);background:#EDEBDD}
+.ing.micro{color:#5A635A}
+
+/* 成分详情弹窗 */
+.modal{
+  position:fixed;z-index:62;left:50%;top:50%;transform:translate(-50%,-46%);
+  width:min(620px,calc(100% - 32px));max-height:min(78vh,720px);overflow-y:auto;
+  background:var(--paper);border:1px solid var(--line);opacity:0;pointer-events:none;
+  transition:opacity .2s,transform .2s;box-shadow:0 24px 60px rgba(20,28,22,.22);
+}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.modal-head{padding:20px 24px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.modal-head .m-name{font-family:var(--serif);font-size:20px;letter-spacing:.05em}
+.modal-head .m-latin{font-family:var(--latin);font-style:italic;font-size:14px;color:var(--muted);margin-top:4px}
+.modal-body{padding:22px 24px 26px}
+.m-rows{border-top:1px solid var(--line-soft)}
+.m-row{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--line-soft);font-size:13px;line-height:1.85}
+.m-row .k{min-width:64px;color:var(--muted);letter-spacing:.06em;flex-shrink:0}
+.m-row .v{color:#3D473E}
+.m-desc{margin-top:18px;font-size:13.5px;line-height:2;color:#3D473E}
+.m-warn{margin-top:16px;border-left:2px solid var(--gold);padding:10px 0 10px 14px;font-size:12.5px;line-height:1.9;color:var(--muted)}
+
+/* 提示条 */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,14px);z-index:70;
+  background:var(--deep);color:var(--paper);padding:11px 22px;font-size:13px;letter-spacing:.06em;
+  opacity:0;pointer-events:none;transition:.24s;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ========== 移动端导航 ========== */
+.mobile-menu{
+  position:fixed;left:0;right:0;top:var(--nav-h);z-index:39;display:none;
+  background:var(--paper);border-bottom:1px solid var(--line);padding:6px 0 14px;
+}
+.mobile-menu.on{display:block}
+.mobile-menu a{display:block;padding:13px var(--pad);font-size:15px;border-bottom:1px solid var(--line-soft)}
+.mobile-menu a:hover{background:var(--paper-2)}
+.copy-link:hover{color:#F7F5EC!important}
+@media (min-width:761px){.mobile-menu{display:none!important}}
+
+/* ========== 响应式 ========== */
+@media (max-width:1024px){
+  .sec-head{grid-template-columns:1fr;align-items:start;gap:18px}
+  .about-grid,.submit-grid,.sci-grid{grid-template-columns:1fr;gap:32px}
+  .sci-figure{position:static}
+  .product-intro{grid-template-columns:1fr}
+  .product-grid{grid-template-columns:1fr;border-top:0}
+  .p-card{border-right:0;border-top:1px solid var(--line);padding-left:0!important;padding-right:0!important}
+  .comp-grid{grid-template-columns:repeat(2,1fr)}
+  .herb-grid{grid-template-columns:repeat(2,1fr)}
+  .declare{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex;border:1px solid var(--line)}
+  .brand-sub{display:none}
+  .specimen{display:none}
+  .hero{min-height:600px}
+  .hero-media img{object-position:70% 50%}
+  .hero-media::after{background:linear-gradient(180deg,rgba(18,27,21,.96) 0%,rgba(18,27,21,.88) 55%,rgba(18,27,21,.55) 100%)}
+  .stat-strip{grid-template-columns:1fr;border-top:1px solid var(--line)}
+  .stat{border-right:0;border-bottom:1px solid var(--line-soft);padding:16px 0 10px}
+  .comp-grid{grid-template-columns:1fr}
+  .comp-block{border-right:0;border-bottom:1px solid var(--line-soft);padding:22px 0 10px}
+  .foot-top,.foot-links{grid-template-columns:1fr}
+  .foot-links{grid-template-columns:repeat(2,1fr)}
+  .log-timeline{grid-template-columns:52px minmax(0,1fr);column-gap:12px}
+  .log-body{padding:0 0 24px 20px}
+  .table-wrap{display:none}
+  .mobile-cmp{display:grid;border-top:1px solid var(--line)}
+  .mc-row{padding:10px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+  .mc-row .n{font-size:13.5px}
+  .mc-row .badges{display:flex;gap:4px}
+  .mc-row .badge{font-size:10.5px;letter-spacing:.04em;border:1px solid var(--line);padding:1px 6px;color:var(--muted)}
+  .mc-row.shared .badge{border-color:var(--gold);color:var(--gold)}
+  .herb-grid{grid-template-columns:1fr 1fr}
+  .chip{min-height:44px;display:inline-flex;align-items:center;padding:8px 12px}
+  .filter{min-height:44px;padding:9px 15px}
+  .switch{min-height:44px;align-items:center}
+  .acc-btn{min-height:48px}
+  .p-actions .btn{min-height:48px}
+  .nav-toggle{width:44px;height:44px}
+  .copy-link{min-height:44px}
+  .foot-links .col a{min-height:44px;display:flex;align-items:center}
+}
+@media (max-width:480px){
+  .herb-grid{grid-template-columns:1fr}
+  .foot-links{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .acc-panel,.drawer,.modal,.overlay,.toast{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 导航 ===== -->
+<nav class="site-nav">
+  <div class="nav-inner wrap">
+    <a class="brand-lockup" href="#top" aria-label="草肤荟 首页">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21c0-7 3.6-11.4 8.4-13-.8 6.2-3.6 10.6-8.4 13z" fill="#41604A"/>
+        <path d="M12 21c0-7-3.6-11.4-8.4-13 .8 6.2 3.6 10.6 8.4 13z" fill="#9FB3A1"/>
+        <path d="M12 21V11" stroke="#22362A" stroke-width="1.2"/>
+      </svg>
+      <span class="brand-name">草肤荟</span>
+      <span class="brand-sub">Caofuhui</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">品牌</a>
+      <a href="#products">产品</a>
+      <a href="#formula">成分对照</a>
+      <a href="#herbs">本草图鉴</a>
+      <a href="#science">成分科普</a>
+      <a href="#submit">作业材料</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="展开导航" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" stroke="#1B271F" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">品牌</a>
+  <a href="#products">产品</a>
+  <a href="#formula">成分对照</a>
+  <a href="#herbs">本草图鉴</a>
+  <a href="#science">成分科普</a>
+  <a href="#submit">作业材料</a>
+</div>
+
+<!-- ===== 首屏 ===== -->
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img src="assets/hero-botanical.webp" fetchpriority="high" alt="深色石板上堆叠的积雪草叶片与陶制研钵">
+  </div>
+  <div class="hero-inner wrap">
+    <p class="eyebrow">植物草本护肤 / 品牌官网</p>
+    <h1>取草木之性<br>养肌肤之常</h1>
+    <p class="hero-lede">草肤荟是植物草本护肤品牌，现有三款产品：保湿面霜、抗皱紧致面霜、植物草本御肤精华液。成分按标签原文逐条列出，功效描述只写到配方能支持的范围。</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#products">看三款产品</a>
+      <a class="btn btn-ghost" href="#formula">查成分对照</a>
+    </div>
+  </div>
+  <div class="specimen" aria-label="标本档案">
+    <div class="spec-title">Specimen CFH-001</div>
+    <div class="spec-row"><span class="k">中文名</span><span>积雪草</span></div>
+    <div class="spec-row"><span class="k">学名</span><span class="latin">Centella asiatica</span></div>
+    <div class="spec-row"><span class="k">入方部位</span><span>全草提取物</span></div>
+    <div class="spec-row"><span class="k">见于</span><span>紧致面霜</span></div>
+  </div>
+</header>
+
+<!-- ===== 品牌理念 ===== -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-aside">
+        <p class="eyebrow">关于 / 品牌</p>
+        <h2>关于草肤荟</h2>
+        <span class="latin">Caofuhui · Botanical Skincare</span>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <h3>选材：写得出拉丁学名，才写进配方</h3>
+          <p>配方里每一种植物来源成分，标签上都同时给出中文名与拉丁学名。同名异物、一物多名在草本原料里很常见，学名是唯一能对得上的身份证明。</p>
+        </div>
+        <div class="principle">
+          <h3>配伍：油脂、保湿剂、舒缓成分各司其职</h3>
+          <p>角鲨烷、霍霍巴籽油、牛油果树果脂负责柔润与封闭；丁二醇、泛醇、透明质酸钠负责抓水；红没药醇、甘草酸二钾、积雪草提取物站在舒缓一侧。提取物不负责"包治"，只负责它该负责的那一段。</p>
+        </div>
+        <div class="principle">
+          <h3>言说：功效说到边界为止</h3>
+          <p>官网不写"美白""淡斑""抗老"这类需要功效评价报告支撑的承诺，也不把"紧致"写成"去皱纹"。能说的是配方里有什么、适合什么人、怎么用；不能说的是它一定会让你变成什么样。</p>
+        </div>
+      </div>
+    </div>
+    <div class="stat-strip" id="statStrip"></div>
+  </div>
+</section>
+
+<!-- ===== 产品 ===== -->
+<section class="section alt" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">产品 / 三款在售</p>
+        <h2>三款产品与完整配方</h2>
+      </div>
+      <p class="sec-lede">三款产品覆盖日常保湿、紧致诉求与精华护理。成分按标签原文逐条列出，点开任意一条都能看到它在配方里的位置与通俗解释。</p>
+    </div>
+
+    <div class="product-intro">
+      <figure class="frame" style="margin:0">
+        <img src="assets/product-trio.webp" loading="lazy" alt="草肤荟三款产品的静物示意：白色磨砂膏霜罐、琥珀色玻璃罐、透明滴管精华瓶">
+        <figcaption>在售三款：保湿面霜 50 g · 抗皱紧致面霜 50 g · 植物草本御肤精华液。容器为课程作业示意。</figcaption>
+      </figure>
+      <div class="copy">
+        <h2>三款共用一套基础骨架</h2>
+        <p>三款产品共用丁二醇、泛醇、对羟基苯乙酮这套基础骨架，差异发生在水油比例与植物提取物的取舍上：面霜往里加脂，精华往外提纯。配方同源的好处是可预期，也意味着成分表能叠起来看。</p>
+        <p style="margin-top:14px">下方向左滑动的表格里，金色标记的行就是三款共用的部分。</p>
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"><!-- 产品卡由脚本渲染 --></div>
+  </div>
+</section>
+
+<!-- ===== 成分对照 ===== -->
+<section class="section" id="formula">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">成分 / 对照</p>
+        <h2>三款成分对照</h2>
+      </div>
+      <p class="sec-lede">纵轴是全部成分条目，按出现次数排序；三款共用的成分标金。</p>
+    </div>
+
+    <div class="formula-bar">
+      <div class="tally" id="formulaTally"></div>
+      <button class="switch" id="sharedOnly" aria-pressed="true">
+        <span class="box" aria-hidden="true"></span>只看重合成分
+      </button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="cmp" id="cmpTable">
+        <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+        <thead><tr id="cmpHead"></tr></thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+    <div class="mobile-cmp" id="cmpMobile"></div>
+    <p class="formula-note">数据来源：课程命题《命题类清单-2026 年秋》第 1、2、4 题的参考成分表，按标签原文录入，未增删条目。保湿面霜写作"己二醇"，另两款写作"1,2-己二醇"，为同一成分的不同标注写法，此处按原文分列，未合并。成分表顺序即标签顺序，含量大于 1% 的成分按降序排列，其余可任意排序，因此不能据排位直接推断浓度。</p>
+  </div>
+</section>
+
+<!-- ===== 本草图鉴 ===== -->
+<section class="section alt" id="herbs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">本草 / 图鉴</p>
+        <h2>本草图鉴</h2>
+      </div>
+      <p class="sec-lede">这里只列标签上真实出现的成分，注明中文名、拉丁学名和它在配方里的角色。三款配方共 37 种带学名成分，其中真菌 6 种、藻类 1 种，图鉴挑出 16 种展开。</p>
+    </div>
+
+    <div class="herb-toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="#1B271F" stroke-width="1.3" fill="none"/><path d="M16 16l5 5" stroke="#1B271F" stroke-width="1.3"/></svg>
+        <input type="search" id="herbSearch" placeholder="搜中文名或拉丁学名，例如 积雪草" aria-label="搜索成分">
+      </div>
+      <div class="filters" id="herbFilters">
+        <button class="filter on" data-type="全部">全部</button>
+        <button class="filter" data-type="油脂">油脂</button>
+        <button class="filter" data-type="保湿">保湿</button>
+        <button class="filter" data-type="舒缓">舒缓</button>
+        <button class="filter" data-type="抗氧化">抗氧化</button>
+        <button class="filter" data-type="香气">香气</button>
+      </div>
+    </div>
+
+    <div class="herb-grid" id="herbGrid"></div>
+  </div>
+</section>
+
+<!-- ===== 成分科普 ===== -->
+<section class="section" id="science">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">科普 / 怎么读成分表</p>
+        <h2>怎么读成分表</h2>
+      </div>
+      <p class="sec-lede">成分表不是越短越好，也不是越长越强。下面六条是判断一份配方时最常被问到的，答案都尽量落到规则和做法上。</p>
+    </div>
+
+    <div class="sci-grid">
+      <figure class="sci-figure" style="margin:0">
+        <img src="assets/herbarium.webp" decoding="async" alt="压制的积雪草标本、桂花与植物浸油，置于档案纸上">
+        <figcaption>压制标本：积雪草叶、桂花，附植物浸油。图为本页面视觉素材，非产品宣传照。</figcaption>
+      </figure>
+      <div class="acc" id="acc">
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">01</span><span class="t">成分表为什么要按顺序读，又不能全信顺序</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>国内化妆品标签的成分表，含量大于 1% 的成分按加入量从多到少排列；含量不超过 1% 的成分，可以不按含量排序，通常集中排在后面。所以排在最前面的水、甘油、丁二醇，确实占了配方的大头；而排在末尾的成分，未必是"随便加一点"。</p>
+            <p>真正的读法是：前半段看骨架（水相、油相、乳化体系），后半段看诉求（活性物、舒缓成分、防腐与香气）。只盯着末尾某个植物提取物判断"有没有用"，会误判；只看前半段，又看不出它想解决什么问题。</p>
+            <div class="quote">低于 0.1% 的成分，按标签规范可归入"其他微量成分"单独列出，这也是为什么很多产品的成分表分两段写。</div>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">02</span><span class="t">"植物提取物"和那株植物，是两件东西</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>标签上写"积雪草提取物"，指的是用溶剂从积雪草里提取出来的那部分，而不是把整株草磨碎放进去。中间隔着提取溶剂、提取比例（比如 10:1 表示十斤原料出一斤提取物）、以及是否做了标准化。</p>
+            <p>所以同一株植物，不同提取物在配方里的作用可能完全不同：有的偏水溶性、主打舒缓，有的偏脂溶性、主打抗氧化。比较产品时，"都含积雪草"并不等于"效果一样"。</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">03</span><span class="t">为什么标签非要写拉丁学名</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>"金银花""忍冬"这类俗名在各地指向的植物并不一致，拉丁学名是唯一的对应标准。标签同时标注中文名与学名，是为了让原料可追溯——你查得到它到底是哪一种植物，也就查得到它相关的公开研究。</p>
+            <p>本页的图鉴按这个逻辑排：先给学名，再讲它在配方里做什么。没有学名的成分（如角鲨烷、泛醇），就写清它是什么物质。</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">04</span><span class="t">微量成分＝概念添加吗</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>不一定。有些成分在很低浓度下就起作用，比如部分抗氧化的植物提取物、某些舒缓成分；也有些成分本来就不该多加，比如防腐剂、香精。判断的关键不是"排得靠后"，而是这个成分起效的浓度区间是多少。</p>
+            <p>反过来，看到一长串植物提取物全堆在微量区，也可以合理怀疑"每样都只放了一点点"。这不构成指控，只是提醒：配料表的长度，不等于配方的深度。</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">05</span><span class="t">香精、防腐与敏感肌</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>防腐体系决定一支面霜能不能安全用完，香精决定它闻起来怎么样。对敏感肌来说，这两项是最常见的刺激来源，而不是那些听起来很厉害的植物提取物。</p>
+            <p>务实的做法：先在耳后或前臂内侧涂一小块，连续用两三天观察；有香精、酒精、高浓度精油的产品，换季时先放一放。保湿面霜因含香精，本站也在产品信息里单独标了出来。</p>
+          </div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span class="idx">06</span><span class="t">官网为什么不写"美白""抗皱"</span><span class="plus" aria-hidden="true"></span></button>
+          <div class="acc-panel"><div class="inner">
+            <p>美白、抗皱、紧致这类表述属于化妆品功效宣称，需要有相应的功效评价资料支撑，并按规范开展评价后才能宣称。课程作业里的模拟品牌没有这些资料，写上去就是无依据宣称。</p>
+            <p>能写的是事实层面的东西：配方里含什么、含量排序如何、适合什么肤质、怎么用、有哪些注意事项。这也是本站在文案上给自己划的线。</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 合规 ===== -->
+<section class="section alt" id="compliance">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">合规 / 边界</p>
+        <h2>合规与声明</h2>
+      </div>
+      <p class="sec-lede">以下四条是本站的表述边界，同时对应课程命题对功效宣称的要求。</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-block">
+        <h3>功效表述</h3>
+        <p>仅描述配方用途与使用感受，如"用于日常保湿""肤感柔润"。不宣称美白、淡斑、去皱、治疗痤疮等效果。</p>
+      </div>
+      <div class="comp-block">
+        <h3>数据来源</h3>
+        <p>成分表逐字取自课程命题的参考成分表；未引用真实商品的备案信息，也未编造价格、销量、检测数据。</p>
+      </div>
+      <div class="comp-block">
+        <h3>个体差异</h3>
+        <p>同一配方在不同人身上的反应并不一致。建议先做局部试用；出现刺痛、泛红应停用并咨询专业人士。</p>
+      </div>
+      <div class="comp-block">
+        <h3>医疗边界</h3>
+        <p>本站内容为课程作业与一般性科普，不构成医疗建议，也不替代皮肤科医生的诊断与处方。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 作业材料 ===== -->
+<section class="section" id="submit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">课程 / 提交材料</p>
+        <h2>命题三：品牌宣传网站搭建</h2>
+      </div>
+      <p class="sec-lede">本页即命题三的成品页面。技术栈、开发日志、素材与 AI 使用声明一并列在此处，便于核查过程。</p>
+    </div>
+
+    <div class="submit-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px">一 / 技术栈说明</p>
+        <div class="stack-list">
+          <div class="stack-row"><span class="k">页面结构</span><span class="v">HTML5 语义化标签，单文件自包含（页面、样式、脚本同文件），无多页路由</span></div>
+          <div class="stack-row"><span class="k">样式</span><span class="v">CSS3：自定义属性（CSS 变量）管理色板与间距，Grid + Flex 布局，媒体查询三档断点（1024 / 760 / 480）</span></div>
+          <div class="stack-row"><span class="k">交互</span><span class="v">原生 JavaScript（ES6），不依赖 React / Vue 等框架，无打包构建；滚动定位用 IntersectionObserver，弹层与手风琴为 DOM 状态切换</span></div>
+          <div class="stack-row"><span class="k">数据</span><span class="v">产品与成分数据以 JS 常量内联。若拆为 products.json，在 file:// 协议下会被跨域策略拦截，需放到静态服务器或 GitHub Pages 上才能 fetch</span></div>
+          <div class="stack-row"><span class="k">字体</span><span class="v">思源宋体 / 思源黑体 + Cormorant Garamond，经字体 CDN 加载，并保留系统回退栈（Noto Serif SC → Songti SC → serif）：断网时视觉降级，阅读不受影响</span></div>
+          <div class="stack-row"><span class="k">图形</span><span class="v">瓶型、图标为内联 SVG；成分对照为原生 table 固定列宽布局，移动端切换为清单视图</span></div>
+          <div class="stack-row"><span class="k">部署</span><span class="v">纯静态；入口文件已命名为 index.html，可直接本地打开。上线走 GitHub Pages：新建仓库 → 上传 index.html 与 assets → Settings → Pages → 选 main 与根目录，站点地址即为 <em>用户名.github.io/仓库名</em></span></div>
+          <div class="stack-row"><span class="k">验收环境</span><span class="v">Chrome / Edge / Safari 最新版桌面端，iOS 与 Android 移动端；已按 1440×900 与 390×844 两种视口核对</span></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow" style="margin-bottom:18px">二 / 开发日志</p>
+        <div class="log-timeline">
+          <div class="log-time">Step 1</div><div class="log-body">
+            <h4>命题解析</h4>
+            <p>从命题清单中锁定第 3 题（品牌宣传网站搭建），提取硬性要求：产品宣传栏、植物草本科普栏、响应式可用、导航清晰，并列出提交清单。</p>
+          </div>
+          <div class="log-time">Step 2</div><div class="log-body">
+            <h4>信息架构</h4>
+            <p>拆成六个部分：首页、品牌理念、产品、成分对照、本草图鉴、成分科普，另加合规声明与作业材料两块，共八个锚点，导航一一对应。</p>
+          </div>
+          <div class="log-time">Step 3</div><div class="log-body">
+            <h4>数据整理</h4>
+            <p>把命题中三款产品的参考成分表逐条录入为结构化数据，区分"成分"与"其他微量成分"两段，并为其中 16 种建立图鉴条目（37 种带学名成分在成分对照表中全量可见）。</p>
+          </div>
+          <div class="log-time">Step 4</div><div class="log-body">
+            <h4>视觉方向</h4>
+            <p>用档案与标本册的语言做视觉：墨绿压暗的草本静物首屏、米白纸底、发丝分隔线、拉丁学名作小字标注，避免促销感与货架感。</p>
+          </div>
+          <div class="log-time">Step 5</div><div class="log-body">
+            <h4>页面开发</h4>
+            <p>先写结构与样式，再接入数据渲染：产品卡、成分对照表（含移动端清单）、图鉴筛选与搜索、成分详情弹层、手风琴科普。全部交互不依赖第三方库。</p>
+          </div>
+          <div class="log-time">Step 6</div><div class="log-body">
+            <h4>自检与修正</h4>
+            <p>用脚本分别按桌面与移动视口整页截图，检查控制台报错、溢出、图表容器宽度与图片裁切，据此调整断点与字号。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="declare">
+      <div class="d-block">
+        <h4>三 / 素材与授权</h4>
+        <p>页面三张摄影素材（首屏草本静物、产品容器示意、压制标本）均为本次作业用 AI 生成的图像，无第三方图库素材、无品牌 Logo 引用，可随作业一并提交。产品容器与包装为模拟设定，不对应任何在售商品。字体为开源授权：思源宋体、思源黑体与 Cormorant Garamond 均依 SIL Open Font License 1.1 使用；页面未使用第三方模板、组件库或图库素材。</p>
+      </div>
+      <div class="d-block">
+        <h4>四 / AI 使用声明</h4>
+        <p>本页面为 AI 协作完成，边界如下：页面结构、八个锚点与视觉方向由本人确定；代码与部分文案由 AI 生成初稿，本人完成命题拆解、三份参考成分表的逐条录入与核对、断点与版式的调整，以及全部文案的最终定稿；三张配图由 AI 图像工具生成，已在「素材与授权」中逐项列明；图鉴条目与成分注释经本人校核后才保留。命题要求的「过程证据」即上文开发日志、本页迭代记录，以及随源码附交的过程稿（含各轮截图与修改记录）。</p>
+      </div>
+      <div class="d-block wide">
+        <h4>五 / 原创声明</h4>
+        <p>本页的结构、版式、文案与图鉴条目由本人设计并整理：命题拆解与信息架构由本人确定，三份成分表逐条人工核对，视觉方向、断点与文案由本人调整定稿；代码与部分文案由 AI 生成初稿后经本人修改。三张配图为 AI 生成并在「素材与授权」中逐项说明；字体依 SIL Open Font License 1.1 使用；未使用第三方模板、组件库、图库素材或其他课程作业。完整修改过程见上文开发日志与随附过程稿。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand-lockup" style="margin-bottom:6px">
+          <span class="brand-name">草肤荟</span>
+          <span class="brand-sub" style="color:#9AA294">Caofuhui</span>
+        </div>
+        <p>植物草本护肤模拟品牌。三款产品、一份成分表、一套说法——把能说的说清楚，把不能说的留在门外。</p>
+      </div>
+      <div class="foot-links">
+        <div class="col">
+          <h5>页面</h5>
+          <a href="#about">品牌理念</a>
+          <a href="#products">产品</a>
+          <a href="#formula">成分对照</a>
+        </div>
+        <div class="col">
+          <h5>内容</h5>
+          <a href="#herbs">本草图鉴</a>
+          <a href="#science">成分科普</a>
+          <a href="#compliance">合规边界</a>
+        </div>
+        <div class="col">
+          <h5>作业</h5>
+          <a href="#submit">技术栈与日志</a>
+          <button class="copy-link" id="copyLink" style="padding:3px 0;color:#B9BFB2;font-size:12.5px;text-align:left">复制页面地址</button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>免责声明：本站为课程作业（命题三·品牌宣传网站搭建）的模拟品牌页面，产品、容器与成分信息均取自命题参考资料，不构成真实商品信息、功效承诺或医疗建议。数据更新日期：2026-11-08。</p>
+      <span>© 2026 草肤荟 · 课程作业</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 弹层 ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+  <div class="drawer-head">
+    <div>
+      <p class="eyebrow" id="drawerCat">产品档案</p>
+      <h3 id="drawerTitle">产品</h3>
+    </div>
+    <button class="drawer-close" id="drawerClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="#1B271F" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="modal-head">
+    <div>
+      <div class="m-name" id="modalName">成分</div>
+      <div class="m-latin" id="modalLatin"></div>
+    </div>
+    <button class="drawer-close" id="modalClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="#1B271F" stroke-width="1.4"/></svg>
+    </button>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   数据层
+   —— 成分表逐条取自课程命题参考成分表（第 1、2、4 题）
+   ============================================================ */
+const PRODUCTS = [
+  {
+    id:'moist', cat:'面霜', name:'保湿面霜', latin:'Moisture Cream · 50 g', size:'50 g',
+    swatch:'#E7E1CE', vessel:'jar',
+    position:'角鲨烷与牛油果树果脂打底，泛醇、红没药醇负责舒缓。质地偏丰润，适合日常保湿与换季干燥。',
+    claim:'日常保湿、柔润肤感',
+    skin:'干性、混合偏干肌肤',
+    use:'早晚洁面后，取黄豆大小涂于面部与颈部，避开眼周。',
+    caution:'配方含香精；未标注酒精。敏感肌建议先做局部试用。',
+    keys:['角鲨烷','霍霍巴籽油','牛油果树果脂'],
+    base:[
+      {k:'水'},{k:'甘油'},{k:'丁二醇'},{k:'角鲨烷'},{k:'鲸蜡硬脂醇橄榄油酸酯'},
+      {k:'山梨坦橄榄油酸酯'},{k:'泛醇'},{k:'鲸蜡硬脂醇'},
+      {k:'牛油果树果脂',l:'Butyrospermum parkii'},{k:'霍霍巴籽油',l:'Simmondsia chinensis'},
+      {k:'己二醇'},{k:'对羟基苯乙酮'},{k:'香精'},{k:'聚丙烯酰基二甲基牛磺酸钠'},
+      {k:'红没药醇'},{k:'黄原胶'},{k:'尿囊素'}
+    ],
+    micro:[]
+  },
+  {
+    id:'firm', cat:'面霜', name:'抗皱紧致面霜', latin:'Firming Cream · 50 g', size:'50 g',
+    swatch:'#7C5B3A', vessel:'jar-tall',
+    position:'在保湿骨架里加入积雪草、红景天、千日菊等植物提取物，油脂占比更高。配方诉求指向紧致感，不承诺去皱。',
+    claim:'日常保湿、柔润肤感；“紧致”为配方设计诉求，未做功效评价，本站不作功效承诺',
+    skin:'中性、混合性及有紧致诉求的肌肤',
+    use:'晚间护肤最后一步，取适量由下向上涂抹，配合轻柔按摩。',
+    caution:'含多种植物提取物，敏感肌建议先做局部试用；不含酒精，未标注香精。',
+    keys:['积雪草提取物','红景天提取物','千日菊提取物'],
+    base:[
+      {k:'水'},{k:'丁二醇'},{k:'鲸蜡硬脂醇橄榄油酸酯'},{k:'泛醇'},{k:'山梨坦橄榄油酸酯'},
+      {k:'角鲨烷'},{k:'霍霍巴籽油',l:'Simmondsia chinensis'},
+      {k:'牛油果树果脂',l:'Butyrospermum parkii'},
+      {k:'四氢甲基嘧啶羧酸'},{k:'羟丙基四氢吡喃三醇'},
+      {k:'紫苏籽油',l:'Perilla ocymoides'},{k:'鲸蜡硬脂醇'},
+      {k:'积雪草提取物',l:'Centella asiatica'},{k:'石榴提取物',l:'Punica granatum'},
+      {k:'1,2-己二醇'},{k:'对羟基苯乙酮'},{k:'红没药醇'},
+      {k:'番石榴果提取物',l:'Psidium guajava'},{k:'精氨酸'},
+      {k:'丙烯酸（酯）类/C10-30 烷醇丙烯酸酯交联聚合物'},
+      {k:'红景天提取物',l:'Rhodiola rosea'},{k:'梅果提取物',l:'Prunus mume'},
+      {k:'桂花花提取物',l:'Osmanthus fragrans'}
+    ],
+    micro:[
+      {k:'尿囊素'},{k:'聚丙烯酰基二甲基牛磺酸钠'},{k:'黄原胶'},{k:'羟基频哪酮视黄酸酯'},
+      {k:'三叶鬼针草提取物',l:'Bidens pilosa'},{k:'辛酰羟肟酸'},
+      {k:'迷迭香叶提取物',l:'Rosmarinus officinalis'},{k:'千日菊提取物',l:'Acmella oleracea'},
+      {k:'松口蘑提取物',l:'Tricholoma matsutake'},{k:'白松露菌提取物',l:'Tuber magnatum'},
+      {k:'EDTA 二钠'},{k:'马齿苋提取物',l:'Portulaca oleracea'},
+      {k:'五味子果提取物',l:'Schisandra chinensis'},{k:'麦冬根提取物',l:'Ophiopogon japonicus'},
+      {k:'拳参根提取物',l:'Polygonum bistorta'},{k:'黄芩根提取物',l:'Scutellaria baicalensis'},
+      {k:'余甘子果提取物',l:'Phyllanthus emblica'},{k:'绞股蓝提取物',l:'Gynostemma pentaphyllum'},
+      {k:'丁香花蕾提取物',l:'Eugenia caryophyllus'},{k:'厚朴树皮提取物',l:'Magnolia officinalis'},
+      {k:'忍冬花提取物',l:'Lonicera japonica'}
+    ]
+  },
+  {
+    id:'serum', cat:'精华液', name:'植物草本御肤精华液', latin:'Herbal Essence · 30 mL', size:'30 mL（模拟设定）',
+    swatch:'#DCE3C9', vessel:'bottle',
+    position:'水基配方，以三叶鬼针草、千日菊、红景天三种植物提取物为主，配麦角硫因与透明质酸钠。质地清爽，适合叠涂。',
+    claim:'保湿、舒缓（依据配方设计，未做功效评价）',
+    skin:'中性、油性及混合性肌肤',
+    use:'洁面、爽肤后取 3—4 滴于掌心，按压上脸，后续叠加面霜。',
+    caution:'含 α-熊果苷等提亮类常用成分，本站不作美白宣称；白天使用请做好防晒。',
+    keys:['三叶鬼针草提取物','千日菊提取物','麦角硫因','银耳提取物'],
+    base:[
+      {k:'水'},{k:'丁二醇'},{k:'三叶鬼针草提取物',l:'Bidens pilosa'},
+      {k:'四氢甲基嘧啶羧酸'},{k:'千日菊提取物',l:'Acmella oleracea'},{k:'麦角硫因'},
+      {k:'α-熊果苷'},{k:'泛醇'},{k:'红景天提取物',l:'Rhodiola rosea'},
+      {k:'松口蘑提取物',l:'Tricholoma matsutake'},{k:'白松露菌提取物',l:'Tuber magnatum'},
+      {k:'透明质酸钠'},{k:'1,2-己二醇'},{k:'对羟基苯乙酮'},{k:'甘草酸二钾'},
+      {k:'银耳提取物',l:'Tremella fuciformis'}
+    ],
+    micro:[
+      {k:'黄芩根提取物',l:'Scutellaria baicalensis'},{k:'黑孢块菌提取物',l:'Tuber melanosporum'},
+      {k:'麦冬根提取物',l:'Ophiopogon japonicus'},{k:'薰衣草花提取物',l:'Lavandula angustifolia'},
+      {k:'姜黄根提取物',l:'Curcuma longa'},{k:'精氨酸'},
+      {k:'葡萄柚果提取物',l:'Citrus paradisi'},{k:'柑橘果提取物',l:'Citrus reticulata'},
+      {k:'绣球菌提取物',l:'Sparassis crispa'},{k:'冬虫夏草提取物',l:'Cordyceps sinensis'},
+      {k:'矢车菊花提取物',l:'Centaurea cyanus'},{k:'栀子提取物',l:'Gardenia florida'},
+      {k:'桂花花提取物',l:'Osmanthus fragrans'},{k:'拟石花菜提取物',l:'Gelidiella acerosa'},
+      {k:'玫瑰花提取物',l:'Rosa rugosa'},{k:'檀香木提取物',l:'Santalum album'},{k:'尿囊素'}
+    ]
+  }
+];
+
+/* 植物来源成分图鉴 */
+const HERBS = [
+  {key:'积雪草提取物',name:'积雪草',latin:'Centella asiatica',type:'舒缓',in:['firm'],
+   desc:'伞形科植物的全草提取物，在配方里常站在舒缓一侧，也常见于修护类产品。它的三萜类成分是公开研究关注的重点。',
+   note:'提取物浓度与标准化程度因原料而异，"含积雪草"不等于含量一致。'},
+  {key:'红景天提取物',name:'红景天',latin:'Rhodiola rosea',type:'抗氧化',in:['firm','serum'],
+   desc:'高山植物的根提取物，配方中多用于抗氧化方向。原料常以红景天苷作为质量控制指标。',
+   note:'抗氧化是配方设计意图，不代表使用后必然产生可测量的抗老效果。'},
+  {key:'三叶鬼针草提取物',name:'三叶鬼针草',latin:'Bidens pilosa',type:'抗氧化',in:['firm','serum'],
+   desc:'菊科植物的地上部分提取物，在精华液里排在主成分区，在面霜里属微量成分。常与抗氧化、舒缓诉求搭配出现。',
+   note:'同一成分在两款产品中的加入量不同，感受也会有差异。'},
+  {key:'千日菊提取物',name:'千日菊',latin:'Acmella oleracea',type:'舒缓',in:['firm','serum'],
+   desc:'菊科植物的花提取物，配方中用于舒缓与肤感调理。原料含烷基酰胺类成分，少量即可影响肤感。',
+   note:'个别资料称其为"植物肉毒素"，属于营销说法，本站不采用。'},
+  {key:'松口蘑提取物',name:'松口蘑',latin:'Tricholoma matsutake',type:'保湿',in:['firm','serum'],
+   desc:'真菌来源提取物，配方中作为保湿与调理成分，常出现在微量成分区。',
+   note:'真菌提取物在标签上写作"提取物"，与"发酵产物"不是一回事。'},
+  {key:'白松露菌提取物',name:'白松露菌',latin:'Tuber magnatum',type:'保湿',in:['firm','serum'],
+   desc:'子囊菌来源的提取物，与松口蘑一起构成配方里的真菌类保湿组合。',
+   note:'原料稀缺、价格高，微量添加是常见做法。'},
+  {key:'马齿苋提取物',name:'马齿苋',latin:'Portulaca oleracea',type:'舒缓',in:['firm'],
+   desc:'马齿苋科植物的全草提取物，配方中常用于舒缓诉求，尤其面向易泛红的肌肤。',
+   note:'属微量成分区，作用以辅助为主。'},
+  {key:'黄芩根提取物',name:'黄芩',latin:'Scutellaria baicalensis',type:'舒缓',in:['firm','serum'],
+   desc:'唇形科植物的根提取物，黄酮类成分是其研究重点，配方中多用于舒缓方向。',
+   note:'植物提取物的颜色偏黄，加入量高时可能影响成品色泽。'},
+  {key:'忍冬花提取物',name:'忍冬',latin:'Lonicera japonica',type:'舒缓',in:['firm'],
+   desc:'即日常所说的金银花，花提取物在配方中用于舒缓与调理。',
+   note:'俗名与学名需对应，标签以学名为准。'},
+  {key:'桂花花提取物',name:'桂花',latin:'Osmanthus fragrans',type:'香气',in:['firm','serum'],
+   desc:'木犀科植物的花提取物，既参与香气表达，也常被列为调理成分。出现在紧致面霜与精华液两款中，前者列在主要成分段，后者在其他微量成分段。',
+   note:'对香气敏感的人，建议先在局部试用。'},
+  {key:'余甘子果提取物',name:'余甘子',latin:'Phyllanthus emblica',type:'抗氧化',in:['firm'],
+   desc:'叶下珠科植物的果实提取物，富含多酚类物质，配方中用于抗氧化方向。',
+   note:'多酚类原料易氧化变色，对配方稳定性要求较高。'},
+  {key:'麦冬根提取物',name:'麦冬',latin:'Ophiopogon japonicus',type:'保湿',in:['firm','serum'],
+   desc:'天门冬科植物的块根提取物，含多糖类成分，配方中作为保湿与调理成分。',
+   note:'属微量成分，通常与其他保湿剂协同使用。'},
+  {key:'霍霍巴籽油',name:'霍霍巴',latin:'Simmondsia chinensis',type:'油脂',in:['moist','firm'],
+   desc:'严格说是液态蜡酯而非甘油三酯，肤感轻、铺展性好，在两款面霜中承担柔润与封闭的角色。',
+   note:'学名常写作 Simmondsia chinensis，标签以注册名称为准。'},
+  {key:'牛油果树果脂',name:'牛油果树',latin:'Butyrospermum parkii',type:'油脂',in:['moist','firm'],
+   desc:'即乳木果油，常温下为半固态，滋润度高，适合干性与换季干燥的肌肤。',
+   note:'含量高时肤感偏厚，油皮可能觉得闷。'},
+  {key:'紫苏籽油',name:'紫苏',latin:'Perilla ocymoides',type:'油脂',in:['firm'],
+   desc:'唇形科植物的种子油，含较多不饱和脂肪酸，配方中用于补充脂质。',
+   note:'不饱和脂肪酸易氧化，需配合抗氧化体系，开封后注意避光。'},
+  {key:'银耳提取物',name:'银耳',latin:'Tremella fuciformis',type:'保湿',in:['serum'],
+   desc:'真菌来源的多糖类成分，吸水性强，在精华液里承担保湿与成膜后的柔润感。',
+   note:'多糖类成分浓度高时肤感会偏黏，通常控制在中低加入量。'}
+];
+
+/* 非植物成分的简要说明 */
+const EXTRAS = {
+  '水':{d:'配方基质，绝大多数护肤品的含量第一位。'},
+  '甘油':{d:'经典保湿剂，吸水性强，价格低廉，几乎所有保湿配方都有它。'},
+  '丁二醇':{d:'保湿兼溶剂，肤感清爽，常用来替代部分甘油以降低黏腻感。'},
+  '角鲨烷':{d:'与皮脂相近的碳氢化合物，柔润、封闭，稳定性好，不易氧化。'},
+  '鲸蜡硬脂醇橄榄油酸酯':{d:'橄榄油来源的乳化剂，帮助水相与油相稳定共存。'},
+  '山梨坦橄榄油酸酯':{d:'非离子型乳化剂，常与前一成分搭配使用。'},
+  '泛醇':{d:'维生素 B5 的衍生物，保湿与舒缓兼有，是配方里最"通用"的活性成分之一。'},
+  '鲸蜡硬脂醇':{d:'脂肪醇，主要作用是增稠与助乳化，不是"酒精"。'},
+  '己二醇':{d:'保湿剂兼助防腐，与 1,2-己二醇为同一成分的不同标注写法。'},
+  '1,2-己二醇':{d:'保湿兼助防腐，常与对羟基苯乙酮组成"无传统防腐剂"体系。'},
+  '对羟基苯乙酮':{d:'抗氧化兼助防腐，常出现在宣称"温和防腐"的配方里。'},
+  '香精':{d:'香气来源。成分表中通常不再展开具体香料，敏感肌需留意。'},
+  '聚丙烯酰基二甲基牛磺酸钠':{d:'高分子增稠剂，少量即可显著提高黏度。'},
+  '红没药醇':{d:'源自洋甘菊的舒缓成分，常与泛醇搭配。'},
+  '黄原胶':{d:'微生物发酵来源的增稠剂，也用于稳定体系。'},
+  '尿囊素':{d:'舒缓类成分，常见于修护型配方。'},
+  '四氢甲基嘧啶羧酸':{d:'即依克多因，保湿与稳定细胞环境的常用成分。'},
+  '羟丙基四氢吡喃三醇':{d:'常被归入"玻色因"类原料，配方中指向紧致诉求。'},
+  '精氨酸':{d:'氨基酸，主要作用是调节配方 pH。'},
+  '丙烯酸（酯）类/C10-30 烷醇丙烯酸酯交联聚合物':{d:'卡波姆类增稠剂，负责膏体的稠度与铺展。'},
+  '麦角硫因':{d:'含硫氨基酸衍生物，配方中用于抗氧化方向。'},
+  '石榴提取物':{d:'石榴果来源的多酚类提取物，配方中多用于抗氧化方向；原料色泽偏红，加入量高时会带色。'},
+  '番石榴果提取物':{d:'热带果实的提取物，含多酚与黄酮，配方中作抗氧化与调理用，属微量添加。'},
+  '梅果提取物':{d:'梅子果实提取物，常以有机酸与多酚为关注点，配方中多用于肤感调理。'},
+  'α-熊果苷':{d:'提亮类诉求常用成分。美白属功效宣称，需评价资料支撑，本站不作此类宣称。'},
+  '透明质酸钠':{d:'透明质酸的钠盐，吸水能力强，是保湿配方的主力之一。'},
+  '甘草酸二钾':{d:'甘草来源的舒缓成分，也用于调理肤感。'},
+  '辛酰羟肟酸':{d:'助防腐成分，常与多元醇搭配使用。'},
+  'EDTA 二钠':{d:'螯合剂，防止金属离子影响配方稳定性。'},
+  '羟基频哪酮视黄酸酯':{d:'视黄醇类衍生物，配方中指向抗皱诉求；本站不作抗皱宣称，敏感肌需谨慎。'}
+};
+
+/* ============================================================
+   工具
+   ============================================================ */
+const $ = (s, el) => (el || document).querySelector(s);
+const $$ = (s, el) => Array.from((el || document).querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pName = {moist:'保湿面霜', firm:'紧致面霜', serum:'精华液'};
+
+/* 汇总索引：成分 -> 出现于哪些产品 */
+const INDEX = {};
+PRODUCTS.forEach(p => {
+  p.base.forEach(i => addIdx(p.id, i, false));
+  p.micro.forEach(i => addIdx(p.id, i, true));
+});
+function addIdx(pid, item, isMicro){
+  const rec = INDEX[item.k] || (INDEX[item.k] = {k:item.k, latin:item.l||'', in:[], microOnly:true, order:Object.keys(INDEX).length});
+  rec.in.push(pid);
+  if (!isMicro) rec.microOnly = false;
+  if (item.l) rec.latin = item.l;
+}
+const ALL_KEYS = Object.values(INDEX).sort((a,b)=>{
+  if (b.in.length !== a.in.length) return b.in.length - a.in.length;
+  return a.order - b.order;
+});
+
+/* ============================================================
+   渲染：统计条
+   ============================================================ */
+function renderStats(){
+  const latinKeys = new Set();
+  PRODUCTS.forEach(p => [...p.base, ...p.micro].forEach(i => { if (i.l) latinKeys.add(i.k); }));
+  const plantCount = latinKeys.size;
+  const total = ALL_KEYS.length;
+  $('#statStrip').innerHTML = [
+    {n:PRODUCTS.length, c:'款在售产品，成分全公开'},
+    {n:total, c:'条成分条目（含微量成分）'},
+    {n:plantCount, c:'种植物与真菌来源成分，均标拉丁学名'}
+  ].map(s => '<div class="stat"><div class="num">'+s.n+'</div><div class="cap">'+s.c+'</div></div>').join('');
+}
+
+/* ============================================================
+   渲染：产品卡
+   ============================================================ */
+function vessel(type){
+  if (type === 'bottle'){
+    return '<svg viewBox="0 0 90 96" aria-hidden="true">'+
+      '<rect x="33" y="6" width="24" height="11" fill="none" stroke="#41564A" stroke-width="1.2"/>'+
+      '<rect x="37" y="17" width="16" height="9" fill="none" stroke="#41564A" stroke-width="1.2"/>'+
+      '<rect x="31" y="26" width="28" height="60" rx="4" fill="#DCE3C9" fill-opacity=".55" stroke="#41564A" stroke-width="1.2"/>'+
+      '<path d="M31 58h28" stroke="#41564A" stroke-width=".9" stroke-dasharray="2 3"/></svg>';
+  }
+  const w = type === 'jar-tall' ? 56 : 70;
+  const x = (90 - w) / 2;
+  return '<svg viewBox="0 0 90 96" aria-hidden="true">'+
+    '<rect x="'+(x-5)+'" y="20" width="'+(w+10)+'" height="13" fill="none" stroke="#41564A" stroke-width="1.2"/>'+
+    '<rect x="'+x+'" y="33" width="'+w+'" height="53" rx="3" fill="#E7E1CE" fill-opacity=".65" stroke="#41564A" stroke-width="1.2"/>'+
+    '<path d="M'+(x+4)+' 62h'+(w-8)+'" stroke="#41564A" stroke-width=".9" stroke-dasharray="2 3"/></svg>';
+}
+
+function renderProducts(){
+  $('#productGrid').innerHTML = PRODUCTS.map(p => {
+    const chips = p.keys.map(k => '<button class="chip" data-ing="'+esc(k)+'">'+esc(k)+'</button>').join('');
+    return '<article class="p-card">'+
+      '<div class="p-cat"><span>'+esc(p.cat)+'</span><span class="swatch" style="background:'+p.swatch+'"></span></div>'+
+      '<div class="p-vessel">'+vessel(p.vessel)+'</div>'+
+      '<h3 class="p-name">'+esc(p.name)+'</h3>'+
+      '<div class="p-latin">'+esc(p.latin)+'</div>'+
+      '<p class="p-position">'+esc(p.position)+'</p>'+
+      '<div class="p-meta">'+
+        '<div class="row"><span>规格</span><span>'+esc(p.size)+'</span></div>'+
+        '<div class="row"><span>成分条目</span><span>'+(p.base.length + p.micro.length)+' 条'+(p.micro.length ? '（微量 '+p.micro.length+' 条）' : '')+'</span></div>'+
+        '<div class="row"><span>适合肤质</span><span>'+esc(p.skin)+'</span></div>'+
+      '</div>'+
+      '<div class="p-keys">'+chips+'</div>'+
+      '<div class="p-actions"><button class="btn btn-line" data-product="'+p.id+'"><span>查看完整配方</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 12h15M14 7l5 5-5 5" stroke="#1B271F" stroke-width="1.3" fill="none"/></svg></button></div>'+
+      '</article>';
+  }).join('');
+}
+
+/* ============================================================
+   渲染：成分对照
+   ============================================================ */
+let sharedOnly = true;
+
+function renderFormula(){
+  const rows = sharedOnly ? ALL_KEYS.filter(r => r.in.length >= 2) : ALL_KEYS;
+  const sharedCount = ALL_KEYS.filter(r => r.in.length >= 2).length;
+
+  $('#formulaTally').innerHTML = '全部成分 <strong>'+ALL_KEYS.length+'</strong> 条 · 三款都含 <strong>'+ALL_KEYS.filter(r=>r.in.length===3).length+'</strong> 条 · 出现在两款及以上 <strong>'+sharedCount+'</strong> 条';
+
+  $('#cmpHead').innerHTML = '<th>成分条目</th>'+PRODUCTS.map(p =>
+    '<th>'+esc(p.cat)+'<span class="th-name">'+esc(p.name)+'</span></th>').join('');
+
+  $('#cmpBody').innerHTML = rows.map(r => {
+    const isShared = r.in.length >= 2;
+    const mark = pid => r.in.indexOf(pid) >= 0 ? '●' : '<span style="color:#C0BAA8">—</span>';
+    return '<tr class="'+(isShared?'shared':'')+'">'+
+      '<td><span class="iname">'+esc(r.k)+'</span>'+(r.microOnly?'<span class="ipos">微量成分区</span>':'')+'</td>'+
+      PRODUCTS.map(p => '<td class="cell-mark">'+mark(p.id)+'</td>').join('')+
+      '</tr>';
+  }).join('');
+
+  $('#cmpMobile').innerHTML = rows.map(r => {
+    const isShared = r.in.length >= 2;
+    return '<div class="mc-row '+(isShared?'shared':'')+'"><span class="n">'+esc(r.k)+'</span>'+
+      '<span class="badges">'+PRODUCTS.map(p =>
+        r.in.indexOf(p.id) >= 0 ? '<span class="badge">'+pName[p.id]+'</span>' : '').join('')+'</span></div>';
+  }).join('') || '<div class="mc-row"><span class="n">没有符合条件的成分</span></div>';
+}
+
+/* ============================================================
+   渲染：本草图鉴
+   ============================================================ */
+let herbType = '全部', herbQuery = '';
+
+function renderHerbs(){
+  const q = herbQuery.trim().toLowerCase();
+  const list = HERBS.filter(h => {
+    const okType = herbType === '全部' || h.type === herbType;
+    const okQ = !q || h.name.includes(q) || h.latin.toLowerCase().includes(q) || h.desc.includes(q);
+    return okType && okQ;
+  });
+  const grid = $('#herbGrid');
+  if (!list.length){
+    grid.innerHTML = '<div class="herb-empty">没有匹配的成分，换个关键词试试，或点"全部"。</div>';
+    return;
+  }
+  grid.innerHTML = list.map(h =>
+    '<button class="herb-card" data-herb="'+esc(h.name)+'">'+
+      '<span class="h-type">'+esc(h.type)+'</span>'+
+      '<span class="h-name">'+esc(h.name)+'</span>'+
+      '<span class="h-latin">'+esc(h.latin)+'</span>'+
+      '<span class="h-desc">'+esc(h.desc)+'</span>'+
+    '</button>').join('');
+}
+
+/* ============================================================
+   弹层
+   ============================================================ */
+const overlay = $('#overlay'), drawer = $('#drawer'), modal = $('#modal');
+
+function lockBody(on){ document.body.style.overflow = on ? 'hidden' : ''; }
+
+function openDrawer(pid){
+  const p = PRODUCTS.find(x => x.id === pid);
+  if (!p) return;
+  $('#drawerCat').textContent = '产品档案 / ' + p.cat;
+  $('#drawerTitle').textContent = p.name;
+  const ingHTML = arr => arr.map(i =>
+    '<button class="ing '+(arr===p.micro?'micro':'')+'" data-ing="'+esc(i.k)+'">'+esc(i.k)+'</button>').join('');
+  $('#drawerBody').innerHTML =
+    '<section class="d-sec"><h4>定位</h4><div class="body">'+esc(p.position)+'</div></section>'+
+    '<section class="d-sec"><h4>功效表述（边界内）</h4><div class="body">'+esc(p.claim)+'</div></section>'+
+    '<section class="d-sec"><h4>成分（标签原文，共 '+p.base.length+' 条）</h4><div class="ing-list">'+ingHTML(p.base)+'</div></section>'+
+    (p.micro.length ? '<section class="d-sec"><h4>其他微量成分（'+p.micro.length+' 条）</h4><div class="ing-list">'+ingHTML(p.micro)+'</div></section>' : '')+
+    '<section class="d-sec"><h4>使用方法</h4><div class="body">'+esc(p.use)+'</div></section>'+
+    '<section class="d-sec"><h4>注意事项</h4><div class="body">'+esc(p.caution)+'</div></section>'+
+    '<section class="d-sec"><h4>数据来源与更新</h4><div class="body">成分表取自课程命题参考成分表，逐条录入未做合并；更新于 2026-11-08。本页为模拟品牌，不代表真实商品备案信息。</div></section>';
+  drawer.classList.add('on'); overlay.classList.add('on');
+  drawer.setAttribute('aria-hidden','false'); lockBody(true);
+  $('#drawerClose').focus();
+}
+
+function openIngredient(k){
+  const herb = HERBS.find(h => h.key === k);
+  if (herb){
+    $('#modalName').textContent = herb.name;
+    $('#modalLatin').textContent = herb.latin;
+    $('#modalBody').innerHTML =
+      '<div class="m-rows">'+
+        '<div class="m-row"><span class="k">标签写法</span><span class="v">'+esc(herb.key)+'</span></div>'+
+        '<div class="m-row"><span class="k">作用类别</span><span class="v">'+esc(herb.type)+'</span></div>'+
+        '<div class="m-row"><span class="k">见于</span><span class="v">'+herb.in.map(i=>pName[i]).join('、')+'</span></div>'+
+      '</div>'+
+      '<p class="m-desc">'+esc(herb.desc)+'</p>'+
+      '<p class="m-warn">'+esc(herb.note)+'</p>';
+  } else {
+    const extra = EXTRAS[k];
+    $('#modalName').textContent = k;
+    $('#modalLatin').textContent = 'base ingredient';
+    $('#modalBody').innerHTML =
+      '<div class="m-rows"><div class="m-row"><span class="k">标签写法</span><span class="v">'+esc(k)+'</span></div>'+
+      '<div class="m-row"><span class="k">见于</span><span class="v">'+INDEX[k].in.map(i=>pName[i]).join('、')+'</span></div></div>'+
+      '<p class="m-desc">'+(extra ? esc(extra.d) : '标签原文成分，本站暂未展开通俗说明。')+'</p>'+
+      '<p class="m-warn">说明仅用于理解配方结构，不构成功效承诺。</p>';
+  }
+  modal.classList.add('on'); overlay.classList.add('on');
+  modal.setAttribute('aria-hidden','false'); lockBody(true);
+  $('#modalClose').focus();
+}
+
+function closeModal(){
+  modal.classList.remove('on'); modal.setAttribute('aria-hidden','true');
+  if (!drawer.classList.contains('on')){ overlay.classList.remove('on'); lockBody(false); }
+}
+function closeDrawer(){
+  drawer.classList.remove('on'); drawer.setAttribute('aria-hidden','true');
+  if (!modal.classList.contains('on')){ overlay.classList.remove('on'); lockBody(false); }
+}
+overlay.addEventListener('click', () => {
+  if (modal.classList.contains('on')) { closeModal(); } else { closeDrawer(); }
+});
+$('#drawerClose').addEventListener('click', closeDrawer);
+$('#modalClose').addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (modal.classList.contains('on')) { closeModal(); } else { closeDrawer(); }
+});
+
+/* 事件委托：产品详情、成分弹窗 */
+document.addEventListener('click', e => {
+  const pBtn = e.target.closest('[data-product]');
+  if (pBtn){ openDrawer(pBtn.dataset.product); return; }
+  const hBtn = e.target.closest('[data-herb]');
+  if (hBtn){
+    const h = HERBS.find(x => x.name === hBtn.dataset.herb);
+    if (h) openIngredient(h.key);
+    return;
+  }
+  const iBtn = e.target.closest('[data-ing]');
+  if (iBtn){ openIngredient(iBtn.dataset.ing); }
+});
+
+/* ============================================================
+   交互：对照筛选、图鉴搜索、手风琴、导航
+   ============================================================ */
+$('#sharedOnly').addEventListener('click', function(){
+  sharedOnly = !sharedOnly;
+  this.setAttribute('aria-pressed', sharedOnly ? 'true' : 'false');
+  renderFormula();
+});
+
+$('#herbSearch').addEventListener('input', e => { herbQuery = e.target.value; renderHerbs(); });
+$('#herbFilters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter');
+  if (!btn) return;
+  herbType = btn.dataset.type;
+  $$('.filter').forEach(b => b.classList.toggle('on', b === btn));
+  renderHerbs();
+});
+
+$('#acc').addEventListener('click', e => {
+  const btn = e.target.closest('.acc-btn');
+  if (!btn) return;
+  const item = btn.parentElement;
+  const panel = $('.acc-panel', item);
+  const open = item.classList.contains('open');
+  $$('.acc-item', $('#acc')).forEach(it => {
+    it.classList.remove('open');
+    $('.acc-btn', it).setAttribute('aria-expanded','false');
+    $('.acc-panel', it).style.maxHeight = '0px';
+  });
+  if (!open){
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+});
+
+/* 移动端导航 */
+const navToggle = $('#navToggle'), mobileMenu = $('#mobileMenu');
+navToggle.addEventListener('click', () => {
+  const on = mobileMenu.classList.toggle('on');
+  navToggle.setAttribute('aria-expanded', on ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', on ? '收起导航' : '展开导航');
+});
+$$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('on');
+  navToggle.setAttribute('aria-expanded','false');
+}));
+
+/* 导航高亮 */
+const navMap = {};
+$$('#navLinks a').forEach(a => { navMap[a.getAttribute('href').slice(1)] = a; });
+if ('IntersectionObserver' in window){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      const link = navMap[en.target.id];
+      if (!link) return;
+      if (en.isIntersecting){
+        $$('#navLinks a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+  Object.keys(navMap).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+}
+
+/* 复制地址 */
+const toast = $('#toast');
+let toastTimer = null;
+function showToast(msg){
+  toast.textContent = msg; toast.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('on'), 2200);
+}
+$('#copyLink').addEventListener('click', async () => {
+  const text = location.href;
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast('已复制页面地址');
+  } catch (err) {
+    try {
+      const box = document.createElement('textarea');
+      box.value = text;
+      box.style.position = 'fixed';
+      box.style.opacity = '0';
+      document.body.appendChild(box);
+      box.select();
+      const ok = document.execCommand('copy');
+      document.body.removeChild(box);
+      showToast(ok ? '已复制页面地址' : '复制未成功，请手动复制地址栏');
+    } catch (e2) {
+      showToast('复制未成功，请手动复制地址栏');
+    }
+  }
+});
+
+/* 初始化 */
+renderStats();
+renderProducts();
+renderFormula();
+renderHerbs();
+</script>
+</body>
+</html>
